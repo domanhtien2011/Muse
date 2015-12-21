@@ -1,4 +1,15 @@
+.navbar
+  - if user_signed_in?
+    %ul
+      %li= link_to("Add new inspiration", new_post_path)
+      %li= link_to("Sign Out", destroy_user_session_url, method: :delete)
+  - else
+    %ul
+      %li= link_to("Sign Up", new_user_registration_path)
+      %li= link_to("Sign In", new_user_session_url)
+      %li= link_to("Add new inspiration", new_post_path)
+
 - @posts.each do |post|
   %h2= link_to post.title, post
 
-= link_to("Add new inspiration", new_post_path)
+
