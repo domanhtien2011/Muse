@@ -1,0 +1,8 @@
+%h3= @post.title
+%p= @post.link
+%p= @post.description
+
+
+= link_to("Edit", edit_post_url(@post))
+= link_to("Delete", post_url(@post), method: :delete, data: { confirm: "Are you sure?" })
+= link_to("Home Page", root_url)
